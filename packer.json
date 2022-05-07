@@ -1,0 +1,23 @@
+{
+  "builders": [
+    {
+      "server_name": "pgsql-tde",
+      "image_name": "ubuntu-pgsql-tde",
+      "snapshot_name": "ubuntu-pgsql-tde-snapshot",
+      "type": "scaleway",
+      "image": "881d7a33-4cfa-4046-b5cf-c33cb9c62fb6",
+      "zone": "fr-par-1",
+      "commercial_type": "DEV1-S",
+      "ssh_private_key_file": "~/.ssh/id_rsa",
+      "ssh_username": "root",
+      "ssh_timeout": "10m"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "tde.sh"
+    }
+  ]
+}
+
